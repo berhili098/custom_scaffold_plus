@@ -60,5 +60,5 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_scaffold_plus: ^0.0.1
+  custom_scaffold_plus: ^0.0.2
   ```
