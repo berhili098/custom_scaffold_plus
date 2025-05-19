@@ -8,3 +8,7 @@
   * Support for padding, AppBar, FAB, Drawer, BottomNav
   * Responsive and extendable layout
   * Custom FAB positioning & inset behavior
+  
+  ## 0.0.2
+
+* fix typo on the readme example
