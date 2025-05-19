@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
