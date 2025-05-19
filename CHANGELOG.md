@@ -9,10 +9,14 @@
   * Responsive and extendable layout
   * Custom FAB positioning & inset behavior
   
-  ## 0.0.2
+## 0.0.2
 
 * fix typo on the readme example
 
-  ## 0.0.3
+## 0.0.3
 
 * dartformat the bodywrapper
+  
+## 0.0.4
+
+* fix changelog
