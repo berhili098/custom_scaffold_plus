@@ -31,7 +31,8 @@ class BodyWrapper extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(color: backgroundCOlor, gradient: gradient),
+            decoration:
+                BoxDecoration(color: backgroundCOlor, gradient: gradient),
             child: Image.asset(
               bgOverlay!,
               fit: BoxFit.cover,

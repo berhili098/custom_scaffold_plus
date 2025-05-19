@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
 
 void main() {
-  testWidgets('CustomScaffoldPlus renders static child correctly', (WidgetTester tester) async {
+  testWidgets('CustomScaffoldPlus renders static child correctly',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: CustomScaffoldPlus(
@@ -15,7 +16,8 @@ void main() {
     expect(find.text('Hello World'), findsOneWidget);
   });
 
-  testWidgets('CustomScaffoldPlus shows AppBar and FAB', (WidgetTester tester) async {
+  testWidgets('CustomScaffoldPlus shows AppBar and FAB',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: CustomScaffoldPlus(
@@ -33,7 +35,8 @@ void main() {
     expect(find.byType(FloatingActionButton), findsOneWidget);
   });
 
-  testWidgets('CustomScaffoldPlus handles dark and light background assets', (WidgetTester tester) async {
+  testWidgets('CustomScaffoldPlus handles dark and light background assets',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: CustomScaffoldPlus(
@@ -49,7 +52,9 @@ void main() {
     expect(find.text('BG Test'), findsOneWidget);
   });
 
-  testWidgets('CustomScaffoldPlus renders scrollable content with RefreshIndicator', (WidgetTester tester) async {
+  testWidgets(
+      'CustomScaffoldPlus renders scrollable content with RefreshIndicator',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: CustomScaffoldPlus(
