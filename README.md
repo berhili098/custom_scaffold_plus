@@ -23,6 +23,4 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_scaffold_plus:
-    git:
-      url: https://github.com/berhili098/custom_scaffold_plus.git
+  custom_scaffold_plus: ^0.0.1
