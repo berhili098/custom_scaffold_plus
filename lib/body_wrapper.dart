@@ -13,7 +13,7 @@ class BodyWrapper extends StatelessWidget {
     super.key,
     required this.child,
     this.backgroundCOlor = Colors.transparent,
-    this.bgOverlay ,
+    this.bgOverlay,
     this.showOverlay = true,
     this.alignment = Alignment.topCenter,
     this.gradient,

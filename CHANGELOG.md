@@ -12,3 +12,7 @@
   ## 0.0.2
 
 * fix typo on the readme example
+
+  ## 0.0.2
+
+* dartformat the bodywrapper
