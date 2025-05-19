@@ -17,6 +17,43 @@ A powerful, flexible, and production-ready alternative to Flutter's native `Scaf
 
 ---
 
+## ✨ Example
+
+```dart
+import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
+
+// Basic usage
+CustomScaffold(
+  child: Center(
+    child: Text('Hello World!'),
+  ),
+)
+
+// With background image
+CustomScaffold(
+  isDark: true, // Use dark mode background
+  darkBackgroundAsset: 'assets/bg_dark.jpg',
+  lightBackgroundAsset: 'assets/bg_light.jpg',
+  child: Center(
+    child: Text('Hello with background!'),
+  ),
+)
+
+// With scrolling and refresh
+CustomScaffold(
+  scrolling: true,
+  onRefresh: () {
+    // Handle refresh
+    print('Refreshing...');
+  },
+  child: Column(
+    children: [
+      // Your scrollable content
+    ],
+  ),
+)
+```
+
 ## 🚀 Getting Started
 
 Add the dependency to your `pubspec.yaml`:
@@ -24,3 +61,4 @@ Add the dependency to your `pubspec.yaml`:
 ```yaml
 dependencies:
   custom_scaffold_plus: ^0.0.1
+  ```
