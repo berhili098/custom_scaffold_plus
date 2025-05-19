@@ -23,14 +23,14 @@ A powerful, flexible, and production-ready alternative to Flutter's native `Scaf
 import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
 
 // Basic usage
-CustomScaffold(
+CustomScaffoldPlust(
   child: Center(
     child: Text('Hello World!'),
   ),
 )
 
 // With background image
-CustomScaffold(
+CustomScaffoldPlust(
   isDark: true, // Use dark mode background
   darkBackgroundAsset: 'assets/bg_dark.jpg',
   lightBackgroundAsset: 'assets/bg_light.jpg',
@@ -40,7 +40,7 @@ CustomScaffold(
 )
 
 // With scrolling and refresh
-CustomScaffold(
+CustomScaffoldPlust(
   scrolling: true,
   onRefresh: () {
     // Handle refresh
