@@ -56,8 +56,8 @@ class _HomePageState extends State<HomePage> {
       ),
       scrolling: true,
       isDark: isDark,
-      darkBackgroundAsset: 'assets/images/bg_dark.png',
-      lightBackgroundAsset: 'assets/images/bg_light.png',
+      darkBackgroundAsset: 'assets/bg_dark.jpg',
+      lightBackgroundAsset: 'assets/bg_light.jpg',
       padding: const EdgeInsets.all(16),
       onRefresh: _onRefresh,
       body: Column(
