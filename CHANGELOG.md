@@ -1,3 +1,8 @@
+## 0.0.7
+
+* fix tests 
+* add pipeline
+
 ## 0.0.6
 
 * dart format .

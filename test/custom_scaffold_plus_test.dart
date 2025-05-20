@@ -1,6 +1,6 @@
+import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:custom_scaffold_plus/custom_scaffold_plus.dart';
 
 void main() {
   testWidgets('CustomScaffoldPlus renders static child correctly',
@@ -42,8 +42,8 @@ void main() {
         home: CustomScaffoldPlus(
           body: const Text('BG Test'),
           isDark: true,
-          darkBackgroundAsset: 'assets/images/bg_dark.png',
-          lightBackgroundAsset: 'assets/images/bg_light.png',
+          darkBackgroundAsset: 'assets/bg_dark.jpg',
+          lightBackgroundAsset: 'assets/bg_light.jpg',
         ),
       ),
     );
@@ -60,8 +60,10 @@ void main() {
         home: CustomScaffoldPlus(
           scrolling: true,
           onRefresh: () async {},
-          body: Column(
-            children: List.generate(50, (index) => Text('Item $index')),
+          body: SingleChildScrollView(
+            child: Column(
+              children: List.generate(50, (index) => Text('Item $index')),
+            ),
           ),
         ),
       ),
