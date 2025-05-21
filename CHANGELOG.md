@@ -1,6 +1,19 @@
+## 1.0.0
+
+* Added new responsive layout widget for better multi-device support
+* Added background gradient support
+* Added overlay image support
+* Added animation controls for theme switching
+* Added height factor control for flexible layouts
+* Added body alignment customization
+* Fixed padding implementation in BodyWrapper
+* Renamed backgroundCOlor to backgroundColor for consistency
+* Updated example app with responsive layout demonstration
+* Improved documentation
+
 ## 0.0.7
 
-* fix tests 
+* fix tests
 * add pipeline
 
 ## 0.0.6

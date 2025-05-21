@@ -5,14 +5,14 @@ class BodyWrapper extends StatelessWidget {
   final Alignment alignment;
   final bool showOverlay;
   final String? bgOverlay;
-  final Color backgroundCOlor;
+  final Color backgroundColor;
   final double? heightFactor;
   final Gradient? gradient;
   final EdgeInsetsGeometry? padding;
   const BodyWrapper({
     super.key,
     required this.child,
-    this.backgroundCOlor = Colors.transparent,
+    this.backgroundColor = Colors.transparent,
     this.bgOverlay,
     this.showOverlay = true,
     this.alignment = Alignment.topCenter,
@@ -32,7 +32,7 @@ class BodyWrapper extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             decoration:
-                BoxDecoration(color: backgroundCOlor, gradient: gradient),
+                BoxDecoration(color: backgroundColor, gradient: gradient),
             child: Image.asset(
               bgOverlay!,
               fit: BoxFit.cover,
@@ -42,10 +42,12 @@ class BodyWrapper extends StatelessWidget {
         else
           const SizedBox(),
         Container(
-          padding: EdgeInsets.zero,
+          padding: padding ?? EdgeInsets.zero,
           alignment: alignment,
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          height: heightFactor != null
+              ? MediaQuery.of(context).size.height * heightFactor!
+              : MediaQuery.of(context).size.height,
           child: child,
         ),
       ],
