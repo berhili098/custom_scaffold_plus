@@ -111,17 +111,16 @@ class CustomScaffoldPlus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundDecoration =
-        (darkBackgroundAsset != null || lightBackgroundAsset != null)
-            ? BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              )
-            : null;
+    final backgroundDecoration = (darkBackgroundAsset != null || lightBackgroundAsset != null)
+        ? BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
+              ),
+              fit: BoxFit.cover,
+            ),
+          )
+        : null;
 
     Widget content = GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -166,8 +165,8 @@ class CustomScaffoldPlus extends StatelessWidget {
           alignment: bodyAlignment,
           bgOverlay: overlayAsset,
           showOverlay: showOverlay,
-          padding: padding,
           child: Container(
+            padding: padding,
             key: ValueKey<bool>(isDark),
             decoration: backgroundDecoration,
             child: content,
