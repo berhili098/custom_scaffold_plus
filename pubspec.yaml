@@ -1,6 +1,6 @@
 name: custom_scaffold_plus
 description: "A powerful, flexible, and production-ready alternative to Flutter's native Scaffold with features like scrollable content, background images, and more."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/berhili098/custom_scaffold_plus
 repository: https://github.com/berhili098/custom_scaffold_plus
 issue_tracker: https://github.com/berhili098/custom_scaffold_plus/issues

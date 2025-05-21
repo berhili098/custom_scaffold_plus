@@ -1,3 +1,6 @@
+##1.0.1
+* Format Code
+
 ## 1.0.0
 
 * Added new responsive layout widget for better multi-device support

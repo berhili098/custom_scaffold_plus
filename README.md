@@ -106,7 +106,7 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_scaffold_plus: ^1.0.0
+  custom_scaffold_plus: ^1.0.1
 ```
 
 ## 📋 Available Properties

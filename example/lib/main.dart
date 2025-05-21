@@ -184,9 +184,14 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(height: 16),
                         Text('Navigation', style: TextStyle(fontSize: 20)),
                         Divider(),
-                        ListTile(leading: Icon(Icons.home), title: Text('Home')),
-                        ListTile(leading: Icon(Icons.settings), title: Text('Settings')),
-                        ListTile(leading: Icon(Icons.person), title: Text('Profile')),
+                        ListTile(
+                            leading: Icon(Icons.home), title: Text('Home')),
+                        ListTile(
+                            leading: Icon(Icons.settings),
+                            title: Text('Settings')),
+                        ListTile(
+                            leading: Icon(Icons.person),
+                            title: Text('Profile')),
                       ],
                     ),
                   ),
@@ -197,7 +202,8 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text('Desktop Layout', style: TextStyle(fontSize: 32)),
+                    const Text('Desktop Layout',
+                        style: TextStyle(fontSize: 32)),
                     const SizedBox(height: 30),
                     Text(
                       'Counter: $_count',
