@@ -1,6 +1,10 @@
+library;
+
 import 'package:custom_scaffold_plus/body_wrapper.dart';
 import 'package:flutter/material.dart';
-// import 'package:transportapp/core/shared/widgets/body_wrapper.dart';
+
+export 'package:custom_scaffold_plus/body_wrapper.dart';
+export 'package:custom_scaffold_plus/responsive_layout.dart';
 
 /// A powerful, customizable scaffold that supports:
 /// - Background images (light/dark)
@@ -9,6 +13,9 @@ import 'package:flutter/material.dart';
 /// - Focus dismiss on tap
 /// - Floating button positioning
 /// - Drawer & bottom nav
+/// - Custom background gradients
+/// - Responsive height adjustments
+/// - Custom overlay images
 class CustomScaffoldPlus extends StatelessWidget {
   /// The main body widget.
   final Widget? body;
@@ -55,6 +62,27 @@ class CustomScaffoldPlus extends StatelessWidget {
   /// Optional bottom navigation widget.
   final Widget? bottomNavigationBar;
 
+  /// Optional gradient for the background.
+  final Gradient? backgroundGradient;
+
+  /// Optional height factor to control the body height (0.0 to 1.0).
+  final double? heightFactor;
+
+  /// Optional overlay image asset path.
+  final String? overlayAsset;
+
+  /// Whether to show the overlay image.
+  final bool showOverlay;
+
+  /// Alignment of the body content.
+  final Alignment bodyAlignment;
+
+  /// Duration for theme change animations.
+  final Duration animationDuration;
+
+  /// Curve for theme change animations.
+  final Curve animationCurve;
+
   const CustomScaffoldPlus({
     super.key,
     this.body,
@@ -72,21 +100,27 @@ class CustomScaffoldPlus extends StatelessWidget {
     this.extendBody = false,
     this.drawer,
     this.bottomNavigationBar,
+    this.backgroundGradient,
+    this.heightFactor,
+    this.overlayAsset,
+    this.showOverlay = false,
+    this.bodyAlignment = Alignment.topCenter,
+    this.animationDuration = const Duration(milliseconds: 300),
+    this.animationCurve = Curves.easeInOut,
   });
 
   @override
   Widget build(BuildContext context) {
-    final backgroundDecoration =
-        (darkBackgroundAsset != null || lightBackgroundAsset != null)
-            ? BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              )
-            : null;
+    final backgroundDecoration = (darkBackgroundAsset != null || lightBackgroundAsset != null)
+        ? BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
+              ),
+              fit: BoxFit.cover,
+            ),
+          )
+        : null;
 
     Widget content = GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -120,10 +154,23 @@ class CustomScaffoldPlus extends StatelessWidget {
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
       bottomNavigationBar: bottomNavigationBar,
-      body: BodyWrapper(
-        child: Container(
-          decoration: backgroundDecoration,
-          child: content,
+      body: AnimatedSwitcher(
+        duration: animationDuration,
+        switchInCurve: animationCurve,
+        switchOutCurve: animationCurve,
+        child: BodyWrapper(
+          backgroundColor: backgroundColor,
+          gradient: backgroundGradient,
+          heightFactor: heightFactor,
+          alignment: bodyAlignment,
+          bgOverlay: overlayAsset,
+          showOverlay: showOverlay,
+          child: Container(
+            padding: padding,
+            key: ValueKey<bool>(isDark),
+            decoration: backgroundDecoration,
+            child: content,
+          ),
         ),
       ),
     );
