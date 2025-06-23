@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Add safe area possibility
+  
 ## 1.0.1
 
 * Format Code

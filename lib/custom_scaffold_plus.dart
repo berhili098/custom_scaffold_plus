@@ -23,6 +23,8 @@ class CustomScaffoldPlus extends StatelessWidget {
   /// Whether to wrap content in a scroll view.
   final bool scrolling;
 
+  final bool hasSafeArea;
+
   /// Padding around the body.
   final EdgeInsetsGeometry padding;
 
@@ -103,6 +105,7 @@ class CustomScaffoldPlus extends StatelessWidget {
     this.backgroundGradient,
     this.heightFactor,
     this.overlayAsset,
+    this.hasSafeArea = true,
     this.showOverlay = false,
     this.bodyAlignment = Alignment.topCenter,
     this.animationDuration = const Duration(milliseconds: 300),
@@ -111,17 +114,16 @@ class CustomScaffoldPlus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundDecoration =
-        (darkBackgroundAsset != null || lightBackgroundAsset != null)
-            ? BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              )
-            : null;
+    final backgroundDecoration = (darkBackgroundAsset != null || lightBackgroundAsset != null)
+        ? BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                isDark ? darkBackgroundAsset! : lightBackgroundAsset!,
+              ),
+              fit: BoxFit.cover,
+            ),
+          )
+        : null;
 
     Widget content = GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -156,24 +158,28 @@ class CustomScaffoldPlus extends StatelessWidget {
       floatingActionButtonLocation: floatingActionButtonLocation,
       bottomNavigationBar: bottomNavigationBar,
       body: AnimatedSwitcher(
-        duration: animationDuration,
-        switchInCurve: animationCurve,
-        switchOutCurve: animationCurve,
-        child: BodyWrapper(
-          backgroundColor: backgroundColor,
-          gradient: backgroundGradient,
-          heightFactor: heightFactor,
-          alignment: bodyAlignment,
-          bgOverlay: overlayAsset,
-          showOverlay: showOverlay,
-          child: Container(
-            padding: padding,
-            key: ValueKey<bool>(isDark),
-            decoration: backgroundDecoration,
-            child: content,
-          ),
-        ),
-      ),
+          duration: animationDuration,
+          switchInCurve: animationCurve,
+          switchOutCurve: animationCurve,
+          child: SafeArea(
+            bottom: hasSafeArea,
+            top: hasSafeArea,
+            left: hasSafeArea,
+            child: BodyWrapper(
+              backgroundColor: backgroundColor,
+              gradient: backgroundGradient,
+              heightFactor: heightFactor,
+              alignment: bodyAlignment,
+              bgOverlay: overlayAsset,
+              showOverlay: showOverlay,
+              child: Container(
+                padding: padding,
+                key: ValueKey<bool>(isDark),
+                decoration: backgroundDecoration,
+                child: content,
+              ),
+            ),
+          )),
     );
   }
 }
