@@ -163,8 +163,9 @@ class CustomScaffoldPlus extends StatelessWidget {
           switchOutCurve: animationCurve,
           child: SafeArea(
             bottom: hasSafeArea,
-            top: hasSafeArea,
+            top: false,
             left: hasSafeArea,
+            right: hasSafeArea,
             child: BodyWrapper(
               backgroundColor: backgroundColor,
               gradient: backgroundGradient,
